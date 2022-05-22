@@ -7,6 +7,8 @@
 <body>
 
   <script>
+
+    //retorna jogada aleatoria do PC
     function computerPlay(){
       
       let num = Math.floor(Math.random()*4);
@@ -20,7 +22,58 @@
       return 'tesoura';
     }
 
-    function ()
+    //retorna 1 para empate, 2 para vitoria PC, 3 vitoria humano
+    function playOneRound(playerSelection, computerSelection){
+      let jogada = playerSelection.toLowerCase();
+
+      if(playerSelection.localeCompare(computerSelection) == 0){
+        return 1;
+      }
+      else if(playerSelection.localeCompare('pedra') == 0){
+        if(computerSelection.localeCompare('papel')){
+          return 2;
+        }
+        return 3;
+      }
+      else if(playerSelection.localeCompare('papel') == 0){
+        if(computerSelection.localeCompare('pedra') == 0){
+          return 3;
+        }
+        return 2;
+      }
+      else{
+        if(computerSelection.localeCompare('pedra') == 0){
+          return 2;
+        }
+        return 3;
+      }
+    }
+
+    function jogo(){
+      
+      let ponto_pc = 0;
+      let ponto_humano = 0;
+      for(let i = 0; i < 5; i++){
+        let jogadaHumano = prompt('Digite sua jogada: ');
+        let resultado = playOneRound(jogadaHumano, computerPlay());
+        if(resultado == 2){
+          ponto_pc++;
+          console.Log('Computador venceu o round!');
+        }
+        else if(resultado == 3){
+          ponto_humano++;
+          console.Log('Você venceu o round!');
+        }
+        console.Log('Empate neste round!');
+      }
+      if (ponto_pc == ponto_humano){
+        console.Log('Resultado do jogo: Empate')
+      }
+      else if(ponto_pc > ponto_humano){
+        console.Log('Resultado do jogo: PC venceu')
+      }
+      console.Log('Resultado do jogo: Você venceu!!!');
+    }
   </script>
 </body>
 </html>
