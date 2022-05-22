@@ -58,21 +58,27 @@
         let resultado = playOneRound(jogadaHumano, computerPlay());
         if(resultado == 2){
           ponto_pc++;
-          console.Log('Computador venceu o round!');
+          console.log('Computador venceu o round!');
         }
         else if(resultado == 3){
           ponto_humano++;
-          console.Log('Você venceu o round!');
+          console.log('Você venceu o round!');
         }
-        console.Log('Empate neste round!');
+        else{
+          console.log('Empate neste round!');
+          ponto_humano++;
+          ponto_pc++;
+        }
       }
       if (ponto_pc == ponto_humano){
-        console.Log('Resultado do jogo: Empate')
+        console.log('Resultado do jogo: Empate');
       }
       else if(ponto_pc > ponto_humano){
-        console.Log('Resultado do jogo: PC venceu')
+        console.log('Resultado do jogo: PC venceu');
       }
-      console.Log('Resultado do jogo: Você venceu!!!');
+      else{
+        console.log('Resultado do jogo: Você venceu!!!');
+      }
     }
   </script>
 </body>
