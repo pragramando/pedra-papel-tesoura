@@ -2,84 +2,36 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="ppt-style.css">
   <title>Pedra, Papel e Tesoura</title>
 </head>
 <body>
-
-  <script>
-
-    //retorna jogada aleatoria do PC
-    function computerPlay(){
-      
-      let num = Math.floor(Math.random()*4);
-
-      if (num == 1){
-        return 'pedra';
-      }
-      else if(num == 2){
-        return 'papel';
-      }
-      return 'tesoura';
-    }
-
-    //retorna 1 para empate, 2 para vitoria PC, 3 vitoria humano
-    function playOneRound(playerSelection, computerSelection){
-      let jogada = playerSelection.toLowerCase();
-
-      if(playerSelection.localeCompare(computerSelection) == 0){
-        return 1;
-      }
-      else if(playerSelection.localeCompare('pedra') == 0){
-        if(computerSelection.localeCompare('papel')){
-          return 2;
-        }
-        return 3;
-      }
-      else if(playerSelection.localeCompare('papel') == 0){
-        if(computerSelection.localeCompare('pedra') == 0){
-          return 3;
-        }
-        return 2;
-      }
-      else{
-        if(computerSelection.localeCompare('pedra') == 0){
-          return 2;
-        }
-        return 3;
-      }
-    }
-
-    function jogo(){
-      
-      let ponto_pc = 0;
-      let ponto_humano = 0;
-      for(let i = 0; i < 5; i++){
-        let jogadaHumano = prompt('Digite sua jogada: ');
-        let resultado = playOneRound(jogadaHumano, computerPlay());
-        if(resultado == 2){
-          ponto_pc++;
-          console.log('Computador venceu o round!');
-        }
-        else if(resultado == 3){
-          ponto_humano++;
-          console.log('Você venceu o round!');
-        }
-        else{
-          console.log('Empate neste round!');
-          ponto_humano++;
-          ponto_pc++;
-        }
-      }
-      if (ponto_pc == ponto_humano){
-        console.log('Resultado do jogo: Empate');
-      }
-      else if(ponto_pc > ponto_humano){
-        console.log('Resultado do jogo: PC venceu');
-      }
-      else{
-        console.log('Resultado do jogo: Você venceu!!!');
-      }
-    }
-  </script>
+  <div id="jogo">
+    <h1 id="titulo">Pedra Papel Tesoura</h1>
+    <div id="painel">
+      <div id="marcador">
+        <h2 id="pcPoints">0</h2>
+        <h3>PC</h3>
+      </div>
+      <div id="marcador">
+        <h2 id="round">0</h2>
+        <p>Round</p>
+      </div>
+      <div id="marcador">
+        <h2 id="humanoPoints">0</h2>
+        <h3>Você</h3>
+      </div>
+    </div>
+    <h3 id="resultado">Preparadx para jogar?</h3>
+    <div id="jogadas">
+      <div>
+        <button id="pedra">Pedra</button>
+        <button id="papel">Papel</button>
+        <button id="tesoura">Tesoura</button>
+      </div>
+    </div>
+    <button id="reset">RESET</button>
+  </div>
+  <script src="ppt-script.js"></script>
 </body>
 </html>

@@ -1,0 +1,76 @@
+
+#jogo{
+    width: 300px;
+    padding: 5px;
+    border: 3px;
+    border-style: solid;
+    background-color: rgb(104, 104, 121);
+    border-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#marcador{
+    color: black;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70px;
+    width: 70px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#jogadas{
+    display: flex;
+    justify-content: center;
+    background-color: beige;
+    padding: 10px;
+    border-radius: 10px;
+    border-color: black;
+    border-style: solid ;
+}
+
+#painel{
+    display: flex;
+    justify-content:space-around;
+}
+
+#resultado{
+    background-color: beige;
+    padding: 10px;
+    border-radius: 10px;
+    border-color: black;
+    border-style: solid ;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+#titulo{
+    padding: 10px;
+    text-align: center;
+    background-color: beige;
+    border-radius: 10px;
+    border-color: black;
+    border-style: solid ;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: beige;
+}
+
+
+button{
+    font-weight: bold;
+    opacity: 70%;
+    background-color: rgb(113, 113, 214);
+    border-radius: 10%;
+    border-width: 3px;
+    border-color: black;
+    border-style: solid;
+    padding: 10px;
+}
